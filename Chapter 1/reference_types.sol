@@ -18,7 +18,7 @@ contract EmrPatients{
   function saveMedicalReport(string memory mr_number, string memory report_name, address p_addr) public payable {
     patientRecordMapping[mr_number] = medicalRecord(report_name, p_addr);
   }
-
+  // Return medical record from mr_number
   function getReportByMedicalRecordNumber(string memory mr_number) public view returns (string memory, address) {
     return (patientRecordMapping[mr_number].report_name, patientRecordMapping[mr_number].owner);
   }
